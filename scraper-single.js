@@ -76,7 +76,7 @@ puppeteer.use(stealthPlugin);
         const file = fs.createWriteStream(filePath);
         response.pipe(file);
         console.log(filePath + " Saved!");
-        fs.appendFile("names.txt", filePath + "\r\n", (err) => {
+        fs.appendFile("video-data.txt", filePath + "\r\n", (err) => {
           if (err) throw err;
           console.log("Done");
         });

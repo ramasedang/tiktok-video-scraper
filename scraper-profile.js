@@ -68,7 +68,7 @@ async function main() {
     ).map((items) => items.innerText + " #shorts\r\n")
   );
 
-  fs.appendFile("names.txt", videoDes.join(""), function (err) {
+  fs.appendFile("video-data.txt", videoDes.join(""), function (err) {
     if (err) throw err;
     console.log("Descriptions Saved!");
   });
@@ -133,7 +133,7 @@ async function downloadVideo(page, url, path) {
       const file = fs.createWriteStream(filePath);
       response.pipe(file);
       console.log(filePath + " Saved!");
-      fs.appendFile("names.txt", filePath + "\r\n", (err) => {
+      fs.appendFile("video-data.txt", filePath + "\r\n", (err) => {
         if (err) throw err;
         console.log("Done");
       });
